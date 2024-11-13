@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+body {
+  font-size: 20px;
+  background-color: #f2f2f2;
+}
+@media (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+body > .content {
+  margin-top: 60px;
+  padding: 30px;
+}
+
+
+.topnav {
+  width: 100%;
+  background: #11101D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 20px;
+}
+.topnav a {
+  text-decoration: none;
+}
+.topnav .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.topnav .menu .icon {
+  font-size: 24px;
+  color: #fff;
+  transition: 0.3s;
+}
+.topnav .admin:hover .name,
+.topnav .menu .icon:hover {
+  color: #007bff;
+}
+.topnav .admin .name{
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s;
+}
+.topnav .admin img {
+  vertical-align: middle;
+  object-fit: cover;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  z-index: 10;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  bottom: 0;
+  left: -300px;
+  background: #11101d;
+  transition: 0.3s;
+}
+.sidebar.show {
+  left: 0px;
+}
+.sidebar .icon{
+  margin-right: 20px;
+  font-size: 24px;
+}
+.sidebar .menu-list {
+  list-style: none;
+}
+.sidebar .menu-list li .dropdown,
+.sidebar .menu-list li a {
+  position: relative;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar .menu-list .dropdown:hover,
+.sidebar .menu-list li.active a,
+.sidebar .menu-list li a:hover{
+  background: #282645;
+  border-left: 5px solid #fff;
+}
+.sidebar .menu-list li .drop-menu{
+  display: none;
+}
+.sidebar .menu-list li .drop-menu.show {
+  display: block;
+}
+.sidebar .menu-list li .drop-menu li{
+  background: #161526;
+}
+.sidebar .menu-list li .drop-menu li a{
+  padding-left: 40px;
+}
+.sidebar .menu-list li .dropdown .caret{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+@media (max-width: 1024px) {
+  .topnav .admin .name{
+    display: none;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table th {
+  background-color: #049778;
+  color: #FFFFFF;
+}
+.table tr:nth-child(odd){
+  background-color: #F3F3F3;
+  color: #049778;
+}
+.table td,
+.table th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #DEDEDE;
+  font-weight: 600;
+}
+.table a {
+  color: #007bff;
+}
+.table form {
+  display: inline-block;
+}
+.table button {
+  font-size: inherit;
+  color: #FF2C20;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.form textarea,
+.form input,
+.form select {
+  resize: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 100%;
+  border: 2px solid #000000;
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.form .error {
+  color: #FF2C20;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.form button{
+  background-color: #53AEFF;
+  color: #FFFFFF;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: inherit;
+  border: none;
+} 
+
+
+.link-button {
+  position: relative;
+  padding-left: 60px;
+  padding-right: 30px;
+  display: block;
+  width: fit-content;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.link-button .circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 500px;
+  transform: translateY(-50%);
+  left: 0;
+  top: 50%;
+  background: #282936;
+  color: #ffffff;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+.link-button .circle .icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 25px;
+  top: 50%;
+}
+.link-button:hover {
+  color: #ffffff;
+}
+.link-button:hover .circle {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.header .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.header .table {
+  border-radius: 5px;
+  border: 1px solid #000000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .table .number {
+  font-size: 24px;
+}
+.header .category {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.header .category .button {
+  background: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.header .category ul {
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.header .category ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.header .category ul li a {
+  color: #858585;
+  text-decoration: none;
+}
+.header .category ul li a.active {
+  color: #000000;
+
+}
+
+.product,
+.product ul {
+  list-style: none;
+}
+.product > li {
+  margin-bottom: 10px;
+}
+.product > li:last-child {
+  margin-bottom: 0;
+}
+.product li .category,
+.product li ul li {
+  padding: 10px;
+  background: #ffffff;
+  margin-bottom: 2px;
+}
+.product li ul li {
+  display: flex;
+  column-gap: 10px;
+}
+.product li ul li .image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.product li ul li .info {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+.product li ul li .info .price {
+  font-size: 20px;
+}
+
+
+.welcome-screen {
+  background-color: #f0f4f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-screen .content .title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.welcome-screen .content {
+  width: 100%;
+  max-width: 300px;
+}
+.welcome-screen .content a,
+.welcome-screen .content button {
+  padding: 5px 10px;
+  width: 100%;
+  font-size: inherit;
+  border: none;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+} 
+
+.login {
+  background-color: #f0f4f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-box .title {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+}
+
+.login-box .footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.login-box .footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-box .error {
+  font-size: 14px;
+  color: #FF2C20;
+  margin-bottom: 5px;
+}
+
+.login-box .footer a:hover {
+  text-decoration: underline;
+}
