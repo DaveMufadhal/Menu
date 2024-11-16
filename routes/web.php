@@ -18,7 +18,11 @@ Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/menu/{category:slug}', [MenuController::class, 'filter']);
 Route::post('/menu/{menu:slug}/cart', [MenuController::class, 'cart']);
 
+
 Route::get('/cart', [CartController::class, 'index']);
+Route::post('/cart/{menu:slug}/min', [CartController::class, 'min']);
+Route::post('/cart/{menu:slug}/add', [CartController::class, 'add']);
+Route::post('/cart', [CartController::class, 'checkout']);
 
 
 

@@ -10,9 +10,8 @@ use App\Models\Menu;
 class MenuController extends Controller
 {
     public function index(Request $request) {
-       
         return view('menu', [
-            'cart_count' => $request->session()->get('cart', collect([]))->count(),
+            'cart_count' => $request->session()->get('cart', collect())->sum('quantity') ?? 0,
             'categories' => Category::all(),
             'selectedCategory' => false,
             'menus' => Menu::all(),
@@ -32,10 +31,24 @@ class MenuController extends Controller
     public function cart(Request $request, Menu $menu)
     {
         if($request->session()->get('cart')) {
-            $request->session()->push('cart', $menu->id);
+            $cart = $request->session()->get('cart');
+            if($cart->contains('menu_id', $menu->id)) {
+                $updatedCart = $cart->map(function ($item) use ($menu) {
+                    if ($item['menu_id'] == $menu->id) {
+                        $item['quantity'] = $item['quantity'] += 1;
+                    }
+                    return $item;
+                });
+                $request->session()->put('cart', $updatedCart);
+            } else {
+                $request->session()->push('cart', collect(["quantity" => 1, "menu_id" => $menu->id]));
+            }
         } else {
-            $request->session()->put('cart', collect([$menu->id]));
-        }    
+            $cart = collect([["quantity" => 1, "menu_id" => $menu->id]]);
+            $request->session()->put('cart', $cart);
+        };
+        
+        
      
         return back();
     }
