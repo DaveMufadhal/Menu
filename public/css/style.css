@@ -6,12 +6,12 @@
   font-family: "Poppins", serif;
 }
 body {
-  font-size: 20px;
+  font-size: 18px;
   background-color: #f2f2f2;
 }
 @media (max-width: 1024px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -244,7 +244,9 @@ body > .content {
 
 
 
-
+/* -------------------- */
+/* product */
+/* -------------------- */
 .header {
   position: sticky;
   top: 0;
@@ -330,12 +332,65 @@ body > .content {
   flex-direction: column;
   justify-content: space-between;
   display: flex;
+  flex-grow: 1;
 }
 .product li ul li .info .price {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product li ul li .info .price .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.product li ul li .info .price .quantity button {
+  height: 40px;
+  width: 40px;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background-color: #000000;
+  border-radius: 20px;
 }
 
+.floating-cart {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  width: 90%;
+  background-color: #EC2900;
+  text-decoration: none;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.floating-cart .text {
+  color: #ffffff;
+}
+.floating-cart .number {
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+}
+/* -------------------- */
+/* product end */
+/* -------------------- */
 
+/* -------------------- */
+/* welcome screen */
+/* -------------------- */
 .welcome-screen {
   background-color: #f0f4f8;
   height: 100vh;
@@ -368,6 +423,9 @@ body > .content {
   border-radius: 10px;
   margin-bottom: 10px;
 } 
+/* -------------------- */
+/* welcome screen end */
+/* -------------------- */
 
 .login {
   background-color: #f0f4f8;
